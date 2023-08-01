@@ -1,0 +1,1 @@
+export {Text as Label} from "react-native";
