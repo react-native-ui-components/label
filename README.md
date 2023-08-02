@@ -1,1 +1,1 @@
-# @react-native-ui-components/label
+# `@react-native-ui-components/label`
