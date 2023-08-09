@@ -1,7 +1,10 @@
-import {Text} from "react-native";
-import {} from "@react-native-ui-components/color";
+import {Text, type TextProps, type TextStyle} from "react-native";
 
-//todo might end up using native components
+export interface LabelProps extends Omit<TextProps, "children"> {
+	title?: string;
+	type?: string; //todo replace with literals
+	bold?: boolean;
+}
 
 const types = {
 	body: {
@@ -48,19 +51,19 @@ const types = {
 		fontSize: 20,
 		lineHeight: 25
 	}
-};
+} as Record<string, TextStyle>;
 
-export const Label = props => (
+export const Label = ({title, type, style, ...props}: LabelProps) => (
 	<Text
 		{...props}
 		style={[
 			{
 				color: "black" //todo use color module (textLabel)
 			},
-			types[props.type || "body"],
-			props.style
+			types[type || "body"],
+			style
 		]}
 	>
-		{props.children}
+		{title}
 	</Text>
 );
