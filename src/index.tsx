@@ -1,3 +1,4 @@
+import React from "react";
 import {Text, type TextProps, type TextStyle} from "react-native";
 
 export interface LabelProps extends Omit<TextProps, "children"> {
